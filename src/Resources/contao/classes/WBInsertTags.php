@@ -56,7 +56,7 @@ class WBInsertTags extends \System {
       return '<a href="#" 
         class="crypt-mail" 
         data-encr="'. $strEncr .'" 
-        onclick="decryptMail(this);return false;"
+        onclick="decryptMails();return false;"
         >E-Mail-Adresse anzeigen</a>';
     }
     return false;
