@@ -42,7 +42,23 @@ class WBInsertTags extends \System {
 		}
 		return false;
 	}
-	
-	
+
+  public function secureEmail($mail)
+  {
+    $arrSplit = explode('::',$mail);
+    if($arrSplit[0] === 'email_secure') {
+
+      $strEncr = '';
+      foreach(str_split($arrSplit[1]) as $char) {
+        $strEncr .= chr(ord($char)-5);
+      }
+
+      return '<a href="#" 
+        class="crypt-mail" 
+        data-encr="'. $strEncr .'" 
+        onclick="decryptMail(this);return false;"
+        >E-Mail-Adresse anzeigen</a>';
+    }
+    return false;
+  }
 }
-?>

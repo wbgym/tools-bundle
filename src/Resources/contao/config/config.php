@@ -14,4 +14,4 @@
 * Hooks
 */
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','countdown');
-?>
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','secureEmail');
