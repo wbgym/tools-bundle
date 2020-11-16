@@ -15,6 +15,8 @@
  */
 namespace WBGym;
 
+use Contao\PageModel;
+
 class WBInsertTags extends \System {
 	
 	public function countdown($tag) {
@@ -60,5 +62,15 @@ class WBInsertTags extends \System {
         >E-Mail-Adresse anzeigen</a>';
     }
     return false;
+  }
+
+  public function linkTargetBlank($link)
+  {
+	  $arrSplit = explode('::', $link);
+	  if($arrSplit[0] == 'link_blank') {
+		$objNextPage = PageModel::findByIdOrAlias($arrSplit[1]);
+
+		return '<a href="'.$objNextPage->getFrontendUrl().'" target="_blank" title="'. $objNextPage->title .'">'.$objNextPage->title.'</a>';
+	  }
   }
 }

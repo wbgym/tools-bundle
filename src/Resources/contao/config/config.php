@@ -15,3 +15,4 @@
 */
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','countdown');
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','secureEmail');
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','linkTargetBlank');
