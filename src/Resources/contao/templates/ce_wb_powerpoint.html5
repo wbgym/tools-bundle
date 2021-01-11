@@ -1,0 +1,24 @@
+<div class="ce_powerpoint">
+  <?php if ($this->splashImage): ?>
+    <a id="splashImage_<?= $this->id ?>" href="<?= $this->source ?>">
+      <?php $this->insert('picture_default', $this->splashImage->picture); ?>
+    </a>
+    <span class="privacy-info">
+      Wichtig: Sobald Sie die PowerPoint starten, werden Daten an Microsoft übertragen und möglicherweise Cookies von Microsoft gesetzt.
+      <a href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank">Mehr zum Datenschutz bei Microsoft</a>
+    </span>
+    <script>
+        document.getElementById('splashImage_<?= $this->id ?>').addEventListener('click', function(e) {
+            e.preventDefault();
+            var iframe = document.createElement('iframe');
+            iframe.src = this.href;
+            iframe.width = '<?= $this->width ?>';
+            iframe.height = '<?= $this->height ?>';
+            iframe.setAttribute('frameborder', '0');
+            this.parentNode.replaceChild(iframe, this);
+        });
+    </script>
+  <?php else: ?>
+      <iframe src="<?= $this->source; ?>" width="<?= $this->width; ?>" height="<?= $this->height; ?>" frameborder="0"></iframe>
+  <?php endif; ?>
+</div>

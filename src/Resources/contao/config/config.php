@@ -16,3 +16,8 @@
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','countdown');
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','secureEmail');
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('WBGym\WBInsertTags','linkTargetBlank');
+
+/**
+ * Content Elements
+ */
+$GLOBALS['TL_CTE']['media']['wb_powerpoint']	= 'WBGym\ContentPowerpoint';
